@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Button} from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,18 +7,29 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import {useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 const UserData=(props)=>
 {
     const data=useSelector(state =>state.UserData)
-   console.log(data)
+    const dispatch=useDispatch()
+    console.log(data)
  /*var day = data.BirthDate.getDate();
     var month =data.BirthDate.getMonth();
-    var year = data.BirthDate.getFullYear();
+    var year = data.BirthDate.getFullYear7  ();
     var string = day + '-' + month + '-' + year;
    */ 
      
     //console.log("bday",string)
+    const id=1
+    const handleRemove=(index)=>
+    {
+
+        //dispatch({type:"remove",index:index})
+
+
+    }
     return(
+      
   <div>
       <h1 style={{textAlign:"center"}}>User Information</h1>
        {data.name} 
@@ -35,14 +46,15 @@ const UserData=(props)=>
         </TableHead>
         <TableBody>
           {data.map(value =>(
-                 
+                                    
                 
-                     <TableRow>
+                     <TableRow id={id+1}>
               <TableCell align="right">{value.Name}</TableCell>
               <TableCell align="center">{value.College}</TableCell>
               <TableCell align="center">{value.Gender}</TableCell>
-              <TableCell align="center">{}</TableCell>
+              <TableCell align="center">{value.BirthDate.toDateString()}</TableCell>
               <TableCell align="center">{value.Address}</TableCell>
+              <TableCell align="cenet"><Button onClick={handleRemove(id)}>Delete</Button></TableCell>
             </TableRow>
          ))}
 

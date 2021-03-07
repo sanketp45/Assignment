@@ -2,7 +2,7 @@ import React, { useState,useEffect} from 'react';
 import Home from './Home';
 import './App.css';
 import axios from 'axios';
-import Typography from '@material-ui/core/Typography';
+
 import AddUser from './AddUser';
 import UserData from './UserData';
 import AppBar from '@material-ui/core/AppBar';
@@ -18,21 +18,18 @@ class App extends React.Component
    {
      return(
       <div>
-                 <Router>
+    <Router>
       <div>
-      <AppBar  position="static" style={{background:"white", padding:"2rem"}}>
-
-        <nav>
-          
-            <Link to="/">Home</Link>
+      <AppBar  position="static" style={{background:"white",padding:"2rem"}}>
+         <nav>
+          <div >
+            <Link to="/" style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >Home</Link>
             
-            <Link to="/AddUser">AddUser</Link>
-            <Link to="/UserData">UserData</Link>
-           
+            <Link to="/AddUser"style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >AddUser</Link>
+            <Link to="/UserData"style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >UserData</Link>
+            </div>
         </nav>
         </AppBar>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
         <Route exact path="/">
          <Home />

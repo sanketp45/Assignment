@@ -78,6 +78,8 @@ const handleSubmit=() =>
       <TextField id="filled-basic" 
        label="address"  
        name="address"
+       multiline
+       rowsMax={4}
        onChange={e =>setUserinfo({...userinfo, Address:e.target.value})} />
      </Grid>
    <Grid item xs={12} sm={12} style={{ width: "95%", marginTop: "1.3rem", marginBottom:"1.5rem" }}>
