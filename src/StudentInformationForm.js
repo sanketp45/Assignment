@@ -17,7 +17,7 @@ import {
 } from "@material-ui/core";
 import DatePicker from "react-datepicker";
 import axios from "axios";
-import UserData from "./UserData";
+import StudentData from "./StudentData";
 import "react-datepicker/dist/react-datepicker.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AddUser = () => {
+const StudentInformationForm = () => {
   const classes = useStyles();
   let history = useHistory();
 
@@ -73,14 +73,15 @@ const AddUser = () => {
     console.log("data", userinfo, Hobbies);
     setShowData(true);
     dispatch({ type: "add-user", payload: userinfo });
-    history.push("/UserData");
+    history.push("/StudentData");
   };
 
   return (
     <div>
       <form>
+        <h1 style={{textAlign:"center"}}>Student Information</h1>
         {showdata ? (
-          <UserData data={userinfo} />
+          <StudentData data={userinfo} />
         ) : (
           <Grid container className={classes.paper}>
             <Grid
@@ -245,4 +246,4 @@ const AddUser = () => {
   );
 };
 
-export default withStyles(useStyles)(AddUser);
+export default withStyles(useStyles)(StudentInformationForm);

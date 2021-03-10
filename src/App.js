@@ -3,8 +3,8 @@ import Home from './Home';
 import './App.css';
 import axios from 'axios';
 
-import AddUser from './AddUser';
-import UserData from './UserData';
+import StudentInformationForm from './StudentInformationForm';
+import StudentData from './StudentData';
 import AppBar from '@material-ui/core/AppBar';
 import {
   BrowserRouter as Router,
@@ -25,8 +25,8 @@ class App extends React.Component
           <div >
             <Link to="/" style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >Home</Link>
             
-            <Link to="/AddUser"style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >AddUser</Link>
-            <Link to="/UserData"style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >UserData</Link>
+            <Link to="/StudentInformationForm" style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >Student Information Fom</Link>
+            <Link to="/StudentData" style={{padding:"15px",textDecoration:"none",color:"black",fontSize:"20px"}} >Student Data</Link>
             </div>
         </nav>
         </AppBar>
@@ -34,11 +34,11 @@ class App extends React.Component
         <Route exact path="/">
          <Home />
          </Route>
-          <Route path="/AddUser">
-            <AddUser />
+          <Route path="/StudentInformationForm">
+            <StudentInformationForm />
           </Route>
-          <Route path="/UserData">
-            <UserData />
+          <Route path="/StudentData">
+            <StudentData />
           </Route>
              </Switch>
       </div>

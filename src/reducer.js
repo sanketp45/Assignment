@@ -1,5 +1,5 @@
 import { useRadioGroup } from "@material-ui/core";
-import UserData from "./UserData";
+import StudentData from "./StudentData";
 
 const initialState = {
   UserData: [],

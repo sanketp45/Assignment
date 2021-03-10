@@ -8,12 +8,14 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-const UserData = (props) => {
+import { nanoid } from 'nanoid';
+const StudentData = (props) => {
   const data = useSelector((state) => state.UserData);
   const dispatch = useDispatch();
-  const id = 1;
+  //let id = 1;
   const handleRemove = (index) => {
-    //dispatch({type:"remove",index:index})
+    console.log("index",index)
+  dispatch({type:"remove",index:index})
   };
   return (
     <div>
@@ -32,16 +34,15 @@ const UserData = (props) => {
           </TableHead>
           <TableBody>
             {data.map((value) => (
-              <TableRow id={id + 1}>
+              <TableRow  key={+new Date() + Math.random()}>  
                 <TableCell align="right">{value.Name}</TableCell>
                 <TableCell align="center">{value.College}</TableCell>
                 <TableCell align="center">{value.Gender}</TableCell>
                 <TableCell align="center">
-                  {value.BirthDate.toDateString()}
-                </TableCell>
+                              </TableCell>
                 <TableCell align="center">{value.Address}</TableCell>
-                <TableCell align="cenet">
-                  <Button onClick={handleRemove(id)}>Delete</Button>
+                <TableCell align="center">
+                  <Button onClick={handleRemove}>Delete</Button>
                 </TableCell>
               </TableRow>
             ))}
@@ -52,4 +53,4 @@ const UserData = (props) => {
   );
 };
 
-export default UserData;
+export default StudentData;
