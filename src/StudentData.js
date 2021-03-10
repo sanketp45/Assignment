@@ -15,7 +15,7 @@ const StudentData = (props) => {
   //let id = 1;
   const handleRemove = (index) => {
     console.log("index",index)
-  dispatch({type:"remove",index:index})
+  //dispatch({type:"remove",index:index})
   };
   return (
     <div>
@@ -38,7 +38,7 @@ const StudentData = (props) => {
                 <TableCell align="right">{value.Name}</TableCell>
                 <TableCell align="center">{value.College}</TableCell>
                 <TableCell align="center">{value.Gender}</TableCell>
-                <TableCell align="center">
+                <TableCell align="center">{value.BirthDate.toDateString()}
                               </TableCell>
                 <TableCell align="center">{value.Address}</TableCell>
                 <TableCell align="center">
