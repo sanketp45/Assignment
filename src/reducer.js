@@ -13,15 +13,6 @@ function reducer(state = initialState, action) {
         UserData: [...state.UserData, action.payload],
       };
 
-    case "remove": {
-      return {
-        ...state,
-        UserData: [
-          ...state.UserData,
-          state.UserData.filter((item) => item !== action.index),
-        ],
-      };
-    }
     default:
       return state;
   }

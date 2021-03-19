@@ -42,7 +42,7 @@ const StudentInformationForm = () => {
     Address: "",
     BirthDate: "",
     Gender: "",
-    College: "",
+    MobileNumber: "",
   });
   const [showdata, setShowData] = useState(false);
   const [Hobbies, setHobbies] = React.useState({
@@ -105,6 +105,30 @@ const StudentInformationForm = () => {
                 }
               />
             </Grid>
+
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              style={{
+                width: "95%",
+                fontSize: "20px",
+                marginTop: ".07rem",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <TextField
+                id="standard-basic"
+                label="Mobile Number"
+                name="mobile number "
+                type="number"
+                placeholder="enter mobile number"
+                onChange={(e) =>
+                  setUserinfo({ ...userinfo, MobileNumber: e.target.value })
+                }
+              />
+            </Grid>
+            
             <Grid item xs={12} sm={12}>
               <TextField
                 id="filled-basic"
@@ -174,69 +198,9 @@ const StudentInformationForm = () => {
                 marginBottom: "1.7rem",
               }}
             >
-              <FormLabel component="legend">Hobbies</FormLabel>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={Hobbies.checked}
-                    onChange={handleChange}
-                    name="Reading"
-                  />
-                }
-                label="Reading"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={Hobbies.checked}
-                    onChange={handleChange}
-                    name="Gaming"
-                  />
-                }
-                label="Gaming"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={Hobbies.checked}
-                    onChange={handleChange}
-                    name="Travelling"
-                  />
-                }
-                label="Travelling"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={Hobbies.checked}
-                    onChange={handleChange}
-                    name="Drawing"
-                  />
-                }
-                label="Drawing"
-              />
+              
             </Grid>
-            <Grid item xs={12} sm={12}>
-              <InputLabel>College</InputLabel>
-              <Select
-                labelId="select-label"
-                id="simple-select"
-                name="facid"
-                style={{ width: "30%", marginTop: ".07rem" }}
-                onChange={(event) =>
-                  setUserinfo({ ...userinfo, College: event.target.value.name })
-                }
-              >
-                <MenuItem value=""></MenuItem>
-                {college &&
-                  college.map((items, index) => (
-                    <MenuItem key={items} value={items}>
-                      {items.name}
-                    </MenuItem>
-                  ))}
-              </Select>
-            </Grid>
-            <Grid item xs={12} sm={12} style={{ marginTop: "2rem" }}>
+            <Grid item xs={12} sm={12} style={{ marginTop: "1rem" }}>
               <Button onClick={handleSubmit}>Submit</Button>
             </Grid>
           </Grid>
